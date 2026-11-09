@@ -1,4 +1,4 @@
-/bDWC Data Analytics Capstone/b
+DWC Data Analytics Capstone
 
 Project overview
 Your capstone is an end-to-end analytics project that demonstrates your ability to turn data into a clear, evidence-based answer.
