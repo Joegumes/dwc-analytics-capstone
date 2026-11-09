@@ -1,79 +1,124 @@
-# dwc-analytics-capstone
-# DWC Analytics Capstone
+DWC Data Analytics Capstone
+Project overview
+Your capstone is an end-to-end analytics project that demonstrates your ability to turn data into a clear, evidence-based answer.
 
-A class project connecting Python, Azure SQL, and Power BI to explore ancient sites around the world.
+You will investigate a practical question, prepare and analyze an approved dataset, create meaningful visualizations, and communicate your findings to an intended audience.
 
-## Dataset
+Your completed project will be documented in GitHub and presented as a case study on a professional portfolio website.
+Your assignment
+Choose a focused question that can be answered using the approved project data.
 
-Source: [Strange Places on Kaggle](https://www.kaggle.com/datasets/lucassteuber/strange-places-mysterious-phenomena).
+Your analysis should help a specific audience understand a problem, evaluate an opportunity, or make a decision. Define what you are investigating before choosing charts or building reports.
 
-The initial load used dataset version 13, file `strange_places_v5.2.json`.
+You will complete the following stages.
+1. Define the question
+Prepare a short proposal explaining:
+- The question you want to answer.
+- Who would use the findings.
+- Why the question matters.
+- The data you expect to use.
+- Your proposed analytical approach.
+Your instructor must approve the project’s question, dataset, and scope before substantial analysis begins.
+2. Understand and prepare the data
+Inspect the data and document:
+- Where it came from and any usage restrictions.
+- What each row represents.
+- The fields needed for your analysis.
+- Missing values, duplicates, inconsistent formats, and other quality concerns.
+- The changes you made and why.
+- Any unresolved issues that could affect your conclusions.
+Keep an unchanged source copy where permitted. Make your preparation steps understandable and reproducible.
+3. Perform the analysis
+Use appropriate methods and course tools to investigate your question.
 
-We selected the `megalithic_portal` category and removed three exact duplicate records, leaving 60,025 rows.
+Your work should:
+- Include accurate calculations, queries, or transformations.
+- Examine relevant patterns and comparisons.
+- Check results for errors or misleading interpretations.
+- Distinguish findings from assumptions.
+- Address the original question.
+Your instructor will confirm the required tools for the approved project. Machine learning is appropriate only when it serves the question and the available data supports it.
+4. Communicate your findings
+Create a focused set of visualizations and a written explanation that includes:
+- The question you investigated.
+- Your most important findings.
+- The evidence supporting those findings.
+- Practical recommendations or next steps.
+- Limitations and unanswered questions.
+Use clear titles, labels, units, and source attribution. Avoid claiming that your analysis establishes more than the data supports.
+5. Document and showcase the project
+Prepare your GitHub repository, portfolio case study, and final presentation so another person can understand both your conclusions and how you reached them.
+Dataset
+The approved capstone dataset will be announced separately.
 
-Fields: latitude, longitude, name, description, category, source.
+Do not assume that datasets used in earlier class exercises are the capstone dataset.
 
-Records include different archaeological site types, not exclusively megalithic structures. Source descriptions may be truncated. Dataset files are not included in this repository; consult the source's licensing and attribution terms before redistribution.
+The instructor will provide a default approved dataset. Students who want to use an alternative must obtain approval before beginning. Approval will consider relevance to the question, data quality, scope, access, and sharing permissions.
+What you will submit
+Project proposal
+A concise description of your question, intended audience, dataset, planned methods, and scope.
+Analysis files
+The workbooks, SQL scripts, notebooks, or other analytical files needed to demonstrate your approved approach.
 
-## Scripts
+Include data-preparation steps and checks. Clearly identify the final versions.
+GitHub project repository
+Create your own project repository when instructed. Its README should explain:
+1. Project title and summary.
+2. The question and intended audience.
+3. Data sources and access instructions.
+4. Tools and methods.
+5. Data preparation and assumptions.
+6. Key findings and visualizations.
+7. Recommendations and limitations.
+8. How to follow or reproduce the analysis.
+Include data files only when redistribution is permitted. Otherwise, provide source links and instructions for obtaining the data.
+Professional portfolio website
+Create a project page that introduces your work to a prospective employer or other nontechnical reader.
 
-| Script | Purpose |
-|---|---|
-| `scripts/load_strange_places.py` | Download, inspect, clean, and upload data. Instructor only; requires SQL admin credentials. |
-| `scripts/test_sql_connection.py` | Test the administrator connection. Instructor only. |
-| `scripts/create_student_account.py` | Create the read-only student account. Instructor only; run once. |
-| `scripts/test_student_access.py` | Verify student access and table permissions. |
+Include:
+- A brief introduction to you and your professional interests.
+- The problem your project addresses.
+- A concise explanation of your approach.
+- Selected visualizations and findings.
+- Limitations and what you learned.
+- A link to your GitHub project.
+A simple, well-organized website is sufficient. The focus is your analytical work and communication; advanced web development is not expected.
+Final presentation
+Present your question, approach, findings, recommendations, and limitations. Be prepared to explain your decisions and demonstrate how your supporting work produces the reported results.
 
-The loader downloads the latest dataset version, so future results may differ. It stops if the destination table already exists.
+Presentation length and submission details will be provided before the final project stage.
+Project milestones
+Milestone	What you bring for review
+Proposal approval	Question, audience, dataset, approach, and scope
+Data preparation checkpoint	Data dictionary, cleaning steps, and quality concerns
+Analysis checkpoint	Working calculations or queries and preliminary findings
+Draft review	Visualizations, conclusions, and draft documentation
+Portfolio review	GitHub repository and website case study
+Final submission	Completed project files, portfolio links, and presentation
 
-## Python setup on macOS
 
-From the repository folder:
+Dates will be published in the course calendar. We will develop the project progressively rather than begin everything during the final sessions.
+What strong work demonstrates
+- A clear purpose: the analysis addresses a meaningful, focused question.
+- Reliable preparation: data issues are investigated and decisions are documented.
+- Technical accuracy: calculations and methods are appropriate and checked.
+- Sound reasoning: conclusions follow from evidence and acknowledge limitations.
+- Clear communication: the intended audience can understand the findings.
+- Reproducibility: someone else can follow how the work was completed.
+- Professional presentation: files, documentation, and portfolio materials are organized and accessible.
+The final grading rubric and any mandatory tool requirements will be provided separately.
+Responsible use of data and AI
+- Use only data you are authorized to access and share.
+- Never publish passwords, API tokens, database credentials, or private personal information.
+- Credit data sources, external code, and other resources.
+- Follow the instructor’s AI-use policy and disclose assistance as required.
+- Verify all submitted work and be able to explain it yourself.
+- Label synthetic data, assumptions, and limitations clearly.
+How to use this class repository
+This repository provides the assignment instructions and approved shared resources.
 
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-python -m pip install -r requirements.txt
-```
+Your final project will live in your own GitHub repository, linked from your portfolio website. Do not upload personal submissions or credentials to this shared repository unless specifically directed.
 
-Install Microsoft ODBC Driver 18 for SQL Server separately. It requires unixODBC and OpenSSL.
-
-On the instructor's Apple Silicon Mac, SQL scripts require this library path:
-
-```bash
-DYLD_LIBRARY_PATH="/opt/homebrew/opt/openssl@3/lib" python -u scripts/test_student_access.py
-```
-
-This path is machine-specific and may differ on other computers.
-
-## Student database access
-
-- Server: `dwc-capstone.database.windows.net`
-- Port: `1433`
-- Database: `dwc-capstone`
-- Username: `dwc_student_readonly`
-- Table: `dbo.megalithic_sites`
-
-Obtain the student password from the instructor. Your public IPv4 address must be added to the server firewall before connecting.
-
-In DBeaver, use SQL Server Authentication and specify the database explicitly.
-
-```sql
-SELECT TOP (5) name, latitude, longitude
-FROM dbo.megalithic_sites;
-```
-
-Student SELECT access was verified; INSERT, UPDATE, and DELETE permissions on the table were absent.
-
-## Compute and cost controls
-
-- Free-limit behavior: auto-pause until next month.
-- Microsoft Defender for SQL: not enabled.
-- Power BI uses Import mode.
-- Scheduled refresh remains off for the static dataset.
-- Refresh manually when source data changes or for a planned demonstration.
-- Disconnect SQL tools after use so the database can become idle.
-
-## Credentials
-
-Passwords are entered locally through prompts. Do not commit passwords, credential notes, API tokens, or `.env` files.
+Any infrastructure scripts remaining from the repository’s initial setup are instructor materials, not capstone requirements. Student starter files will be identified when the approved dataset is released.
+Your first step
+Think about a question or professional area you would enjoy exploring. You do not need to select a dataset, build a website, or begin the analysis today.
